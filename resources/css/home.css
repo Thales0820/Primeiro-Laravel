@@ -1,0 +1,38 @@
+.grid {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.coluna {
+    text-align: center;
+    border: 1px solid #ccc;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #ccc;
+}
+
+.coluna img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    height: 500px;
+}
+
+.coluna p {
+    font-size: 18px;
+    height: 40px;
+    margin: 10px;
+}
+
+.coluna a {
+    background-color: rgb(24, 141, 250);
+    color: white;
+    margin: 20px;
+    padding: 5px 30px;
+    border-radius: 100px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.coluna a:hover {
+    color: red;
+}

@@ -9,6 +9,8 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Obra</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -19,7 +21,21 @@
                         <a href="{{ route('authors.show', $author) }}">{{ $author->nome }}</a>
                     </td>
                     <td>{{ $author->obra }}</td>
-                    <td></td>
+                    <td>
+                        <a class="btn btn-success" href="{{ route('authors.edit', $author) }}">
+                            <i class="bi bi-pencil-square"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <form action="{{ route('authors.destroy', $author) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger" type="submit"
+                            onclick="return confirm('Tem certeza?')" href="">
+                                <i class="bi bi-trash-fill"></i>
+                            </button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

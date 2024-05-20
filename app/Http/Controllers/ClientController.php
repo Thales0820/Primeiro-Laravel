@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class ClientController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Exibir uma listagem do recurso.
      */
     public function index()
     {
@@ -21,11 +22,11 @@ class ClientController extends Controller
             'clients.index', [
                 'clients' => $clients
             ]
-            );
+        );
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Mostrar o formulário para criação de um novo recurso.
      */
     public function create()
     {
@@ -33,7 +34,7 @@ class ClientController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Armazene um recurso recém-criado no armazenamento.
      */
     public function store(Request $request)
     {
@@ -45,7 +46,7 @@ class ClientController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Exibir o recurso especificado.
      */
     public function show(string $id)
     {
@@ -58,26 +59,42 @@ class ClientController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Mostrar o formulário para edição do recurso especificado.
      */
     public function edit(string $id)
     {
-        //
+        $client = Client::find ($id);
+            return view(
+                'clients.edit', [
+                    'client' => $client
+                ]
+            );
+        // dd($client);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Atualize o recurso especificado no armazenamento.
      */
     public function update(Request $request, string $id)
     {
-        //
+        $client = Client::find($id);
+        $client-> update (
+            [
+                'nome' => $request->nome,
+                'endereco' => $request->endereco,
+                'observacao' => $request->observacao
+            ]
+        );
+        return Redirect('/clients');
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remova o recurso especificado do armazenamento.
      */
     public function destroy(string $id)
     {
-        //
+        $client = Client::find($id);
+        $client->delete();
+        return Redirect('/clients');
     }
 }

@@ -10,20 +10,33 @@
                 <th>Nome</th>
                 <th>Quantidade</th>
                 <th>Preço</th>
-                <th>#</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             @foreach ($products as $product)
                 <tr>
                     <th>{{ $product->id }}</th>
-                    <td>{{ $product->nome }}</td>
+                    <td>
+                        <a href="{{ route('products.show', $product) }}">{{ $product->nome }}</a>
+                    </td>
                     <td>{{ $product->quantidade }}</td>
                     <td>{{ $product->preco }}</td>
                     <td>
-                        <a href="{{ route('products.show', $product) }}" class="btn btn-warning">
-                            Detalhes
+                        <a class="btn btn-success" href="{{ route('products.edit', $product) }}">
+                            <i class="bi bi-pencil-square"></i>
                         </a>
+                    </td>
+                    <td>
+                        <form action="{{ route('products.destroy', $product   ) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger" type="submit"
+                            onclick="return confirm('Tem certeza?')">
+                                <i class="bi bi-trash-fill"></i>
+                            </button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

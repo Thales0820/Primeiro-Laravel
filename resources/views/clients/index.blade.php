@@ -10,7 +10,8 @@
                 <th>Nome</th>
                 <th>Endereço</th>
                 <th>Observação</th>
-                <th>Ações</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -22,8 +23,22 @@
                     </td>
                     <td>{{ $client->endereco }}</td>
                     <td>{{ $client->observacao }}</td>
-                    <td></td>
-                    </tr>
+                    <td>
+                        <a class="btn btn-success" href="{{ route('clients.edit', $client) }}">
+                            <i class="bi bi-pencil-square"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <form action="{{ route('clients.destroy', $client   ) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger" type="submit"
+                            onclick="return confirm('Tem certeza?')">
+                                <i class="bi bi-trash-fill"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
             @endforeach
         </tbody>
     </table>

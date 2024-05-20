@@ -1,6 +1,7 @@
 @extends('app')
 @section('title', 'Detalhes de Cliente')
 @section('content')
+<br>
 <div class="card">
     <div class="card-header">
         Detalhes do Cliente {{ $client->nome }}

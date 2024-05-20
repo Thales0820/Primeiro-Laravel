@@ -2,20 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\Flag;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class FlagController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $products = Product::get();
+        $flags = Flag::get();
+
         return view(
-            'products.index', [
-                'products' => $products
+            'flags.index', [
+                'flags' => $flags
             ]
         );
     }
@@ -25,7 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        return view('flags.create');
     }
 
     /**
@@ -35,9 +36,9 @@ class ProductController extends Controller
     {
         $dados = $request->except('_token');
 
-        Product::create($dados);
+        Flag::create($dados);
 
-        return redirect('/products');
+        return redirect('/flags');
     }
 
     /**
@@ -45,10 +46,10 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        $product = Product::find($id);
+        $flag = Flag::find($id);
         return view(
-            'products.show', [
-                'product' => $product
+            'flags.show', [
+                'flag' => $flag
             ]
         );
     }
@@ -58,12 +59,12 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        $product = Product::find ($id);
-        return view(
-            'products.edit', [
-                'product' => $product
-            ]
-        );
+        $flag = Flag::find ($id);
+            return view(
+                'flags.edit', [
+                    'flag' => $flag
+                ]
+            );
     }
 
     /**
@@ -71,15 +72,15 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $product = Product::find($id);
-        $product-> update (
+        $flag = Flag::find($id);
+        $flag-> update (
             [
-                'nome' => $request->nome,
-                'quantidade' => $request->quantidade,
-                'preco' => $request->preco
+                'chave' => $request->chave,
+                'valor' => $request->valor,
+                'descricao' => $request->descricao
             ]
         );
-        return Redirect('/products');
+        return Redirect('/flags');
     }
 
     /**
@@ -87,8 +88,6 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        $product = Product::find($id);
-        $product->delete();
-        return Redirect('/products');
+        //
     }
 }
