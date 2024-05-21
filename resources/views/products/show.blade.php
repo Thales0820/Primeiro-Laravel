@@ -13,7 +13,7 @@
         <p><strong>Obra: </strong> {{ $product->preco }} </p>
         <br>
         <a class="btn btn-primary" href="{{ route('products.index') }}">
-            <i class="bi bi-arrow-left-circle"></i>Voltar para a lista de produtos
+            <i class="bi bi-arrow-left-circle"></i> Voltar para a lista de produtos
         </a>
     </div>
 </div>

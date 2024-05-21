@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Http;
 
 class CepController extends Controller
 {
@@ -37,12 +38,21 @@ class CepController extends Controller
     public function show(Request $request)
     {
         $cep = $request->input('cep');
-        $client = new Client();
-        $response = $client->request('GET', "https://viacep.com.br/ws/{$cep}/json/", [
+        $buscar = new Client();
+        $response = $buscar->request('GET', "https://viacep.com.br/ws/{$cep}/json/", [
             'verify' => false]);
         $data = json_decode($response->getBody(), true);
 
         return view('cep.index', ['data' => $data]);
+
+        // $cep = $request->cep;
+        // //configuração de requisição
+        // $response = Http::withOptions(['verify'=>false])->get("https://viacep.com.br/ws/" . $cep . "/json");
+        // $responseJson = $response->json();
+
+        // return view("cep.index", [
+        //     "data" => $responseJson
+        // ]);
     }
 
     /**

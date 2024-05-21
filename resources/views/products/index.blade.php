@@ -43,6 +43,9 @@
         </tbody>
     </table>
     <a class="btn btn-info" href="{{ route('products.create') }}">
-        <i class="bi bi-plus-circle-fill"></i>Novo Produto
+        <i class="bi bi-plus-circle-fill"></i> Novo Produto
+    </a>
+    <a href="{{ route('home.index') }}" class="btn btn-info">
+        <i class="bi bi-arrow-left-circle"></i> Voltar ao Home
     </a>
 @endsection

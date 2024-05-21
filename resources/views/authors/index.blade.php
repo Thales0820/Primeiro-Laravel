@@ -41,6 +41,9 @@
         </tbody>
     </table>
     <a class="btn btn-secondary" href="{{ route('authors.create') }}">
-        <i class="bi bi-plus-circle-fill"></i>Novo Autor
+        <i class="bi bi-plus-circle-fill"></i> Novo Autor
+    </a>
+    <a href="{{ route('home.index') }}" class="btn btn-info">
+        <i class="bi bi-arrow-left-circle"></i> Voltar ao Home
     </a>
 @endsection

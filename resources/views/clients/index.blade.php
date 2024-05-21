@@ -43,6 +43,9 @@
         </tbody>
     </table>
     <a class="btn btn-primary" href="{{ route('clients.create') }}">
-        <i class="bi bi-plus-circle-fill"></i>Novo Cliente
+        <i class="bi bi-plus-circle-fill"></i> Novo Cliente
+    </a>
+    <a href="{{ route('home.index') }}" class="btn btn-info">
+        <i class="bi bi-arrow-left-circle"></i> Voltar ao Home
     </a>
 @endsection

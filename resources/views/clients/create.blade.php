@@ -18,8 +18,8 @@
             <textarea class="form-control" id="observacao" name="observacao" placeholder="Digite a Observação"></textarea>
         </div>
         <a class="btn btn-success" href="{{ route('clients.index') }}">
-            <i class="bi bi-arrow-left-circle"></i>Voltar
+            <i class="bi bi-arrow-left-circle"></i> Voltar
         </a>
-        <button class="btn btn-primary" type="submit"><i class="bi bi-send"></i>Enviar</button>
+        <button class="btn btn-primary" type="submit"><i class="bi bi-send"></i> Enviar</button>
     </form>
 @endsection

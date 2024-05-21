@@ -12,7 +12,7 @@
         <p><strong>Obra: </strong> {{ $author->obra }} </p>
         <br>
         <a class="btn btn-primary" href="{{ route('authors.index') }}">
-            <i class="bi bi-arrow-left-circle"></i>Voltar para a lista de autores
+            <i class="bi bi-arrow-left-circle"></i> Voltar para a lista de autores
         </a>
     </div>
 </div>

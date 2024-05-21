@@ -18,8 +18,8 @@
             <input type="text" class="form-control" id="preco" name="preco" placeholder="Digite o Preço">
         </div>
         <a class="btn btn-success" href="{{ route('products.index') }}">
-            <i class="bi bi-arrow-left-circle"></i>Voltar
+            <i class="bi bi-arrow-left-circle"></i> Voltar
         </a>
-        <button class="btn btn-info" type="submit"><i class="bi bi-send"></i>Enviar</button>
+        <button class="btn btn-info" type="submit"><i class="bi bi-send"></i> Enviar</button>
     </form>
 @endsection

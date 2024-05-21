@@ -13,7 +13,7 @@
         <p><strong>Observação: </strong> {{ $client->observacao }} </p>
         <br>
         <a class="btn btn-success" href="{{ route('clients.index') }}">
-            <i class="bi bi-arrow-left-circle"></i>Voltar para a lista de clientes
+            <i class="bi bi-arrow-left-circle"></i> Voltar para a lista de clientes
         <a>
     </div>
 </div>

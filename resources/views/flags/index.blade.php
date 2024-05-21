@@ -30,6 +30,9 @@
         </tbody>
     </table>
     <a class="btn btn-primary" href="{{ route('flags.create') }}">
-        <i class=bi bi-plus-circle-fill></i>Novo flage
+        <i class=bi bi-plus-circle-fill></i> Novo flage
+    </a>
+    <a href="{{ route('home.index') }}" class="btn btn-info">
+        <i class="bi bi-arrow-left-circle"></i> Voltar ao Home
     </a>
 @endsection
