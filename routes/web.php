@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CepController;
 use App\Http\Controllers\FlagController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PokemonController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -56,3 +57,6 @@ Route::delete('/authors/{id}', [AuthorController::class, 'destroy'])->name('auth
 
 Route::get('/cep', [CepController::class, 'index'])->name('cep.index');
 Route::post('/cep', [CepController::class, 'show'])->name('cep.show');
+
+Route::get('/pokemon', [PokemonController::class, 'index'])->name('pokemon.index');
+Route::post('/pokemon', [PokemonController::class, 'batalha'])->name('pokemon.batalha');

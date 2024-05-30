@@ -1,7 +1,9 @@
 @extends('app')
 @section('title', 'Buscar Cep')
 @section('content')
+<script src="{{ asset('js/masks.js') }}"></script>
 <br>
+<h1 class="text-center">Buscar Cep</h1>
 <form method="POST" action="{{ route('cep.show') }}">
     @csrf
     <div class="row g-3 align-items-center">
@@ -9,7 +11,7 @@
             <label for="cep" class="col-form-label">CEP:</label>
         </div>
         <div class="col-auto">
-            <input type="text" id="cep" name="cep" class="form-control" placeholder="_____-___">
+            <input type="text" maxlength="9" id="cep" name="cep" class="form-control" placeholder="_____-___">
         </div>
         <div class="col-auto">
             <button type="submit" class="btn btn-primary">Buscar</button>

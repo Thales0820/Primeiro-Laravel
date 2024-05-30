@@ -41,5 +41,12 @@
             <i class="bi bi-search"></i> Ir Para a Tela
         </a>
     </div>
+    <div class="coluna">
+        <img src="{{ asset('images/Pokemon.jpg') }}" alt="Pokemon">
+        <p><strong>Pokemon</strong></p>
+        <a href="{{ route('pokemon.index') }}">
+            <i class="bi bi-search"></i> Ir Para a Tela
+        </a>
+    </div>
 </div>
 @endsection
